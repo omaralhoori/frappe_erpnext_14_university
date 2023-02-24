@@ -1636,7 +1636,7 @@ def get_reference_details(reference_doctype, reference_name, party_account_curre
 
 @frappe.whitelist()
 def get_payment_entry(
-	dt, dn, party_amount=None, bank_account=None, bank_amount=None, party_type=None, payment_type=None
+	dt, dn, party_amount=None, bank_account=None, bank_amount=None, party_type=None, payment_type=None, ignore_account_permission=None
 ):
 	reference_doc = None
 	doc = frappe.get_doc(dt, dn)
@@ -1657,8 +1657,7 @@ def get_payment_entry(
 	)
 
 	# bank or cash
-	bank = get_bank_cash_account(doc, bank_account)
-
+	bank = get_bank_cash_account(doc, bank_account, ignore_account_permission=ignore_account_permission)
 	paid_amount, received_amount = set_paid_amount_and_received_amount(
 		dt, party_account_currency, bank, outstanding_amount, payment_type, bank_amount, doc
 	)
@@ -1789,14 +1788,14 @@ def update_accounting_dimensions(pe, doc):
 		pe.set(dimension, doc.get(dimension))
 
 
-def get_bank_cash_account(doc, bank_account):
+def get_bank_cash_account(doc, bank_account, ignore_account_permission=None):
 	bank = get_default_bank_cash_account(
-		doc.company, "Bank", mode_of_payment=doc.get("mode_of_payment"), account=bank_account
+		doc.company, "Bank", mode_of_payment=doc.get("mode_of_payment"), account=bank_account, ignore_account_permission=ignore_account_permission
 	)
 
 	if not bank:
 		bank = get_default_bank_cash_account(
-			doc.company, "Cash", mode_of_payment=doc.get("mode_of_payment"), account=bank_account
+			doc.company, "Cash", mode_of_payment=doc.get("mode_of_payment"), account=bank_account, ignore_account_permission=ignore_account_permission
 		)
 
 	return bank
