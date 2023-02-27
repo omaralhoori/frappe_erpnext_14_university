@@ -7,6 +7,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "getting-started",
+ "icon_image": "/assets/frappe/icons/icons/14.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Home",
@@ -231,7 +233,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:42.910066",
+ "modified": "2023-02-26 21:03:49.924426",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Home",

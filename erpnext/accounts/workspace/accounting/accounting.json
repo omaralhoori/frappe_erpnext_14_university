@@ -12,6 +12,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "accounting",
+ "icon_image": "/assets/frappe/icons/icons/132.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Accounting",
@@ -1094,7 +1096,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:44.050125",
+ "modified": "2023-02-26 21:04:06.244889",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Accounting",

@@ -7,6 +7,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "support",
+ "icon_image": "/assets/frappe/icons/icons/41.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Support",
@@ -170,7 +172,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:59.526977",
+ "modified": "2023-02-26 20:46:21.389505",
  "modified_by": "Administrator",
  "module": "Support",
  "name": "Support",

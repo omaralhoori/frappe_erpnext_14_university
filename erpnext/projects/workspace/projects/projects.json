@@ -12,6 +12,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "project",
+ "icon_image": "/assets/frappe/icons/icons/57.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Projects",
@@ -191,7 +193,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:54.123557",
+ "modified": "2023-02-26 20:53:39.701172",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Projects",

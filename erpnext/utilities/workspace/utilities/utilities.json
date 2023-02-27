@@ -6,6 +6,8 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
+ "icon_image": "/assets/frappe/icons/icons/31.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Utilities",
@@ -41,7 +43,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:51:02.424765",
+ "modified": "2023-02-26 20:51:02.223191",
  "modified_by": "Administrator",
  "module": "Utilities",
  "name": "Utilities",

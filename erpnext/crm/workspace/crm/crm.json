@@ -12,6 +12,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "crm",
+ "icon_image": "/assets/frappe/icons/icons/120.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "CRM",
@@ -449,7 +451,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:49.422269",
+ "modified": "2023-02-26 20:59:39.788018",
  "modified_by": "Administrator",
  "module": "CRM",
  "name": "CRM",

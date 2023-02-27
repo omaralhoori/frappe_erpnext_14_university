@@ -7,6 +7,8 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "retail",
+ "icon_image": "/assets/frappe/icons/icons/84.png",
+ "icon_type": "Image",
  "idx": 0,
  "is_hidden": 0,
  "label": "Retail",
@@ -102,7 +104,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-02-16 10:50:54.878808",
+ "modified": "2023-02-26 20:53:58.503627",
  "modified_by": "Administrator",
  "module": "Selling",
  "name": "Retail",
