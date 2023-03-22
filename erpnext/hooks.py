@@ -178,7 +178,7 @@ website_route_rules = [
 ]
 
 standard_portal_menu_items = [
-	{"title": "Projects", "route": "/project", "reference_doctype": "Project"},
+	{"title": "Projects", "route": "/project", "reference_doctype": "Project", "role": "Projects User"},
 	{
 		"title": "Request for Quotations",
 		"route": "/rfq",
@@ -228,21 +228,21 @@ standard_portal_menu_items = [
 		"role": "Customer",
 	},
 	{"title": "Issues", "route": "/issues", "reference_doctype": "Issue", "role": "Customer"},
-	{"title": "Addresses", "route": "/addresses", "reference_doctype": "Address"},
+	{"title": "Addresses", "route": "/addresses", "reference_doctype": "Address", "role": "Customer",},
 	{
 		"title": "Timesheets",
 		"route": "/timesheets",
 		"reference_doctype": "Timesheet",
 		"role": "Customer",
 	},
-	{"title": "Newsletter", "route": "/newsletters", "reference_doctype": "Newsletter"},
+	{"title": "Newsletter", "route": "/newsletters", "reference_doctype": "Newsletter", "role": "Customer",},
 	{
 		"title": "Material Request",
 		"route": "/material-requests",
 		"reference_doctype": "Material Request",
 		"role": "Customer",
 	},
-	{"title": "Appointment Booking", "route": "/book_appointment"},
+	{"title": "Appointment Booking", "route": "/book_appointment", "role": "Customer",},
 ]
 
 default_roles = [
