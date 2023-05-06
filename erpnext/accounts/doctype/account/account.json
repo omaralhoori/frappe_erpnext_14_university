@@ -120,6 +120,7 @@
    "oldfieldname": "parent_account",
    "oldfieldtype": "Link",
    "options": "Account",
+   "reqd": 1,
    "search_index": 1
   },
   {
@@ -197,18 +198,19 @@
   {
    "allow_in_quick_entry": 1,
    "fieldname": "level",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "ignore_user_permissions": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Level"
+   "label": "Level",
+   "options": "\n1\n2\n3\n4\n5"
   }
  ],
  "icon": "fa fa-money",
  "idx": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2023-05-06 20:31:54.543704",
+ "modified": "2023-05-06 20:39:09.687374",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Account",
