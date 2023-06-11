@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "invoice_and_billing_tab",
+  "gl_entries_section",
+  "allow_zero_value_transaction",
   "enable_features_section",
   "unlink_payment_on_cancellation_of_invoice",
   "unlink_advance_payment_on_cancelation_of_order",
@@ -360,6 +362,17 @@
    "fieldname": "show_balance_in_coa",
    "fieldtype": "Check",
    "label": "Show Balances in Chart Of Accounts"
+  },
+  {
+   "fieldname": "gl_entries_section",
+   "fieldtype": "Section Break",
+   "label": "GL Entries"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_zero_value_transaction",
+   "fieldtype": "Check",
+   "label": "Allow Zero Value Transaction"
   }
  ],
  "icon": "icon-cog",
@@ -367,7 +380,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-01-02 12:07:42.434214",
+ "modified": "2023-06-11 12:14:49.949501",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Accounts Settings",

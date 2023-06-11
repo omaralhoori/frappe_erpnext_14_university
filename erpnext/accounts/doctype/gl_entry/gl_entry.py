@@ -95,20 +95,21 @@ class GLEntry(Document):
 				)
 
 		# Zero value transaction is not allowed
-		if not (
-			flt(self.debit, self.precision("debit"))
-			or flt(self.credit, self.precision("credit"))
-			or (
-				self.voucher_type == "Journal Entry"
-				and frappe.get_cached_value("Journal Entry", self.voucher_no, "voucher_type")
-				== "Exchange Gain Or Loss"
-			)
-		):
-			frappe.throw(
-				_("{0} {1}: Either debit or credit amount is required for {2}").format(
-					self.voucher_type, self.voucher_no, self.account
+		if not frappe.db.get_single_value('Accounts Settings', 'allow_zero_value_transaction'):
+			if not (
+				flt(self.debit, self.precision("debit"))
+				or flt(self.credit, self.precision("credit"))
+				or (
+					self.voucher_type == "Journal Entry"
+					and frappe.get_cached_value("Journal Entry", self.voucher_no, "voucher_type")
+					== "Exchange Gain Or Loss"
 				)
-			)
+			):
+				frappe.throw(
+					_("{0} {1}: Either debit or credit amount is required for {2}").format(
+						self.voucher_type, self.voucher_no, self.account
+					)
+				)
 
 	def pl_must_have_cost_center(self):
 		"""Validate that profit and loss type account GL entries have a cost center."""
