@@ -350,18 +350,18 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:(doc.party && doc.paid_from && doc.paid_to && doc.paid_amount && doc.received_amount)",
    "fieldname": "section_break_14",
    "fieldtype": "Section Break",
    "label": "Reference"
   },
   {
-   "depends_on": "eval:doc.docstatus==0",
+   "allow_on_submit": 1,
    "fieldname": "get_outstanding_invoice",
    "fieldtype": "Button",
    "label": "Get Outstanding Invoice"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "references",
    "fieldtype": "Table",
    "label": "Payment References",
@@ -731,7 +731,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-03-11 13:45:33.341337",
+ "modified": "2023-08-29 12:30:21.618128",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",
