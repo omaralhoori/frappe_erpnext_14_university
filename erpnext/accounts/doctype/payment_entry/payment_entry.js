@@ -110,7 +110,10 @@ frappe.ui.form.on('Payment Entry', {
 				var doctypes = ["Sales Order", "Sales Invoice", "Journal Entry", "Dunning"];
 			} else if (frm.doc.party_type == "Supplier") {
 				var doctypes = ["Purchase Order", "Purchase Invoice", "Journal Entry"];
-			} else {
+			} 
+			else if (frm.doc.party_type ==  "Student"){
+				var doctypes = ['Fees'];
+			}else {
 				var doctypes = ["Journal Entry"];
 			}
 
