@@ -1365,6 +1365,7 @@ def get_orders_to_be_billed(
 	cost_center=None,
 	filters=None,
 ):
+	voucher_type=None
 	if party_type == "Customer":
 		voucher_type = "Sales Order"
 	elif party_type == "Supplier":
@@ -1446,6 +1447,8 @@ def get_negative_outstanding_invoices(
 	condition=None,
 ):
 	voucher_type = "Sales Invoice" if party_type == "Customer" else "Purchase Invoice"
+	if party_type == 'Student':
+		voucher_type = 'Fees'
 	supplier_condition = ""
 	if voucher_type == "Purchase Invoice":
 		supplier_condition = "and (release_date is null or release_date <= CURRENT_DATE)"
@@ -1455,6 +1458,9 @@ def get_negative_outstanding_invoices(
 	else:
 		grand_total_field = "grand_total"
 		rounded_total_field = "rounded_total"
+	if voucher_type == 'Fees':
+		grand_total_field = 'grand_total'
+		rounded_total_field = 0
 
 	return frappe.db.sql(
 		"""
@@ -1462,14 +1468,12 @@ def get_negative_outstanding_invoices(
 			"{voucher_type}" as voucher_type, name as voucher_no,
 			if({rounded_total_field}, {rounded_total_field}, {grand_total_field}) as invoice_amount,
 			outstanding_amount, posting_date,
-			due_date, conversion_rate as exchange_rate
+			due_date, 1 as exchange_rate
 		from
 			`tab{voucher_type}`
 		where
-			{party_type} = %s and {party_account} = %s and docstatus = 1 and
-			outstanding_amount < 0
-			{supplier_condition}
-			{condition}
+			{party_type} = %s and docstatus = 1 and
+			outstanding_amount > 0
 		order by
 			posting_date, name
 		""".format(
@@ -1484,7 +1488,7 @@ def get_negative_outstanding_invoices(
 				"cost_center": cost_center,
 			}
 		),
-		(party, party_account),
+		(party),
 		as_dict=True,
 	)
 
