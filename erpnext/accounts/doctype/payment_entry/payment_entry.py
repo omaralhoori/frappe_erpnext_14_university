@@ -1582,7 +1582,7 @@ def get_outstanding_on_journal_entry(name):
 
 
 @frappe.whitelist()
-def get_reference_details(reference_doctype, reference_name, party_account_currency):
+def get_reference_details(reference_doctype, reference_name, party_account_currency,  party_type=None, party=None):
 	total_amount = outstanding_amount = exchange_rate = None
 
 	ref_doc = frappe.get_doc(reference_doctype, reference_name)
